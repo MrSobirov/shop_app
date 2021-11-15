@@ -62,8 +62,8 @@ class UserProductsScreen extends StatelessWidget {
                               'You have not added any products yet',
                               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.lightBlue),
                               textAlign: TextAlign.center,),
-                          )
-                              : ListView.builder(
+                          ) : ListView.builder(
+                              physics: BouncingScrollPhysics(),
                               itemCount: productsData.items.length,
                               itemBuilder: (_, i) => Column(children: [
                                     UserProductItem(productsData.items[i].title, productsData.items[i].imageUrl, productsData.items[i].id),

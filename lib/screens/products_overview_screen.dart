@@ -75,44 +75,49 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               return Center(child: CircularProgressIndicator());
             } else {
               if (dataSnapshot.error != null) {
-                return Column(
-                  children: [
-                    Container(
-                        width: double.infinity,
-                        height: 600,
-                        child: Image.asset(
-                          'images/wifi.png', fit: BoxFit.cover,),
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(top: 10, bottom: 10),
-                        child: Text('Check your connection and try again',
-                          style: TextStyle(fontSize: 30, color: Colors.lightBlue),
-                          textAlign: TextAlign.center,
-                        )
-                    ),
-                  ],
+                return SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                          width: double.infinity,
+                          height: 600,
+                          child: Image.asset(
+                            'images/wifi.png', fit: BoxFit.cover,),
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(top: 10, bottom: 10),
+                          child: Text('Check your connection and try again',
+                            style: TextStyle(fontSize: 30, color: Colors.lightBlue),
+                            textAlign: TextAlign.center,
+                          )
+                      ),
+                    ],
+                  ),
                 );
               } else {
                 return Consumer<Products>(
                   builder: (ctx, orderData, child) =>
-                      Column(children: [
-                        Container(
-                          child: Column(children: [
-                            Container(
-                                width: double.infinity,
-                                height: 190,
-                                child: Image.asset(
-                                  'images/shop2.jpg', fit: BoxFit.cover,)),
-                            Container(
-                                margin: EdgeInsets.only(top: 10, bottom: 10),
-                                child: Text('Available products',
-                                  style: TextStyle(
-                                      fontSize: 30, color: Colors.lightBlue),)),
-                            ProductsGrid(_showOnlyFavorites),
-                          ],
+                      SingleChildScrollView(
+                        physics: NeverScrollableScrollPhysics(),
+                        child: Column(children: [
+                          Container(
+                            child: Column(children: [
+                              Container(
+                                  width: double.infinity,
+                                  height: 190,
+                                  child: Image.asset(
+                                    'images/shop2.jpg', fit: BoxFit.cover,)),
+                              Container(
+                                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text('Available products',
+                                    style: TextStyle(
+                                        fontSize: 30, color: Colors.lightBlue),)),
+                              ProductsGrid(_showOnlyFavorites),
+                            ],
+                            ),
                           ),
+                        ],
                         ),
-                      ],
                       ),
                 );
               }

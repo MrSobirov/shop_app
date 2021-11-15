@@ -94,6 +94,7 @@ class _Order_ItemState extends State<Order_Item> {
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
               height: _expanded ? min(widget.order.products.length * 20.0 + 10, 100) : 0,
               child: ListView(
+                physics: BouncingScrollPhysics(),
                 children: widget.order.products.map((prod) => Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

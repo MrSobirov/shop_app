@@ -20,7 +20,9 @@ class OrdersScreen extends StatelessWidget {
         future: Provider.of<Orders>(context, listen: false).fetchAndSetOrders(),
         builder: (ctx, dataSnapshot) {
           if (dataSnapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(
+                child: CircularProgressIndicator()
+            );
           } else {
             if (dataSnapshot.error != null) {
               return Center(
@@ -29,32 +31,45 @@ class OrdersScreen extends StatelessWidget {
                 ),
               );
             } else {
-              return Consumer<Orders>(
-                builder: (ctx, orderData, child) => Column(children: [
-                  Container(
-                    width: double.infinity,
-                    height: 190,
-                     child: Image.asset('images/orders2.jpg', fit: BoxFit.cover,)
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 10, bottom: 10),
-                      child: Text('Completed orders', style: TextStyle(fontSize: 30, color: Colors.grey),),
-                  ),
-                  Container(
-                    height: 500,
+              return SingleChildScrollView(
+                physics: NeverScrollableScrollPhysics(),
+                child: Consumer<Orders>(
+                  builder: (ctx, orderData, child) => Column(
+                    children: [
+                    Container(
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * .20,
+                        child: Image.asset('images/orders2.jpg', fit: BoxFit.cover,)
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 10, bottom: 10),
+                      height: MediaQuery.of(context).size.height * .05,
+                      child: Text(
+                        'Completed orders',
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.grey
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * .73,
                       child: orderData.orders.length == 0 ?
                       Center(child: Text(
                         'You have not ordered anything yet',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                         textAlign: TextAlign.center,
-                      ),)
-                          : ListView.builder(
-                        itemCount: orderData.orders.length,
-                         itemBuilder: (ctx, i) => Order_Item(orderData.orders[i])),
+                      ),
+                      ) : ListView.builder(
+                          physics: BouncingScrollPhysics(),
+                          itemCount: orderData.orders.length,
+                          itemBuilder: (ctx, i) => Order_Item(orderData.orders[i])
+                      ),
+                    ),
+                  ],
                   ),
-               ],
-              ),
-            );
+                ),
+              );
             }
           }
         },
