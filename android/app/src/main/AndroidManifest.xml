@@ -3,7 +3,7 @@
     <!-- Required to fetch data from the internet. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="shop_app"
+        android:label="My Shop"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
