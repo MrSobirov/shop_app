@@ -17,6 +17,7 @@ import 'package:shop_app/screens/splash_screen.dart';
 import 'package:shop_app/screens/user_products_screen.dart';
 
 void main() {
+
   runApp(MyApp());
 }
 
