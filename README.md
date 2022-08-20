@@ -1,16 +1,21 @@
 # shop_app
 
-A new Flutter project.
+My Shop
 
-## Getting Started
+Firebase Realtime Database is used for backend and Provider is used for StateManagement.
+There is authentication in this project and you can manage your products and order items
 
-This project is a starting point for a Flutter application.
+e-mail: test2@gmail.com
+password: test2code
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/auth.jpg" width="250" height="500" title="hover text">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/login.jpg" width="250" height="500" alt="accessibility text">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/home.jpg" width="250" height="500" alt="accessibility text">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/cart.jpg" width="250" height="500" title="hover text">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/order.jpg" width="250" height="500" alt="accessibility text">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/my.jpg" width="250" height="500" alt="accessibility text">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/new.jpg" width="250" height="500" title="hover text">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/edit.jpg" width="250" height="500" alt="accessibility text">
+  <img src="https://github.com/MrSobirov/shop_app/blob/master/readme_asset/drawer.jpg" width="250" height="500" alt="accessibility text">
+</p>
